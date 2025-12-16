@@ -77,3 +77,4 @@ Resets the projectile position to the origin before starting the simulation.
 ---
 
 ### `main()`
+Runs the main loop while y-pos > 0
