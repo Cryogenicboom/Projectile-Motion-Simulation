@@ -1,8 +1,12 @@
+# FUCK GPT
+
 import math
 
 time_list = []
 vy_list = []
 pos_y_list = []
+energy_list = []
+pos_x_list = []
 
 state = {
     "Vx" : 0, "Vy" : 0, "Pos_x" : 0, "Pos_y" : 0
@@ -69,22 +73,40 @@ def main():
         time_list.append(time)
         vy_list.append(state["Vy"])
         pos_y_list.append(state["Pos_y"])
+        pos_x_list.append(state["Pos_x"])
+        energy_list.append(Te)
 
     import matplotlib.pyplot as plt
 
-    plt.figure(1)
-    plt.plot(time_list, vy_list)
-    plt.xlabel("Time (sec)")
-    plt.ylabel("Vertical Velocity (m/s)")
-    plt.title("Vy vs Time")
-    plt.grid(True)
+    
+    # plt.figure(1)
+    # plt.plot(time_list, vy_list)
+    # plt.xlabel("Time (sec)")
+    # plt.ylabel("Vertical Velocity (m/s)")
+    # plt.title("Vy vs Time")
+    # plt.grid(True)
 
     plt.figure(2)
-    plt.subplot(time_list,pos_y_list)
+    plt.plot(time_list,pos_y_list)
     plt.ylabel("Y position")
     plt.xlabel("Time")
     plt.grid(True)
+
+    plt.figure(3)
+    plt.plot(pos_x_list,pos_y_list)
+    plt.ylabel("Y position")
+    plt.xlabel("X position")
+    plt.grid(True)
+
+    plt.figure(4)
+    plt.plot(time_list,energy_list)
+    plt.ylabel("Total energy")
+    plt.xlabel("Time")
+    plt.grid(True)
+
     plt.show()
+
     quit()
 
 main()
+
