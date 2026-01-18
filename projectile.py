@@ -1,4 +1,4 @@
-# FUCK GPT
+# GPT Sucks 
 
 import math
 
@@ -109,4 +109,5 @@ def main():
     quit()
 
 main()
+
 
