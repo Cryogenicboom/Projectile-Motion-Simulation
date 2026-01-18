@@ -1,5 +1,6 @@
-# GPT Sucks 
+# GPT Suck
 
+import numpy as np
 import math
 
 time_list = []
@@ -12,7 +13,7 @@ state = {
     "Vx" : 0, "Vy" : 0, "Pos_x" : 0, "Pos_y" : 0
 }
 time = 0
-dt = 0.1
+dt = 0.001
 Ay = -9.81
 Ax = 0
 
@@ -104,10 +105,17 @@ def main():
     plt.xlabel("Time")
     plt.grid(True)
 
+    plt.xlim(left=0)
+    plt.ylim(bottom=0)
+
+    plt.xticks(np.arange(0, max(time_list) + 1, 50))
+    plt.yticks(np.arange(0, max(energy_list) + 1, 50))
+
+    plt.margins(0)
+
     plt.show()
 
     quit()
 
 main()
-
 
